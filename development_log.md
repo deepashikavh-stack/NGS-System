@@ -19,3 +19,6 @@
 ## [2026-01-12 11:35] Supabase Integration
 - Connected project to Supabase Project ID: igpybrzgdyfhzlvxivfu.
 - Configured VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in .env.
+## [2026-01-12 11:44] GitHub Integration
+- Connected local repository to https://github.com/deepashikavh-stack/NGS-System.git.
+- Performed initial commit and pushed to 'main' branch.

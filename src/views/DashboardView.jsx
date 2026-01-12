@@ -8,7 +8,6 @@ const DashboardView = () => {
         { title: 'Total Visitors Today', value: '42', icon: Users, trend: 'up', trendValue: '+12%', color: '#2563eb' },
         { title: 'Staff On-Site', value: '128', icon: UserPlus, trend: 'up', trendValue: '+5%', color: '#10b981' },
         { title: 'Vehicle Entries', value: '18', icon: Car, trend: 'down', trendValue: '-2%', color: '#f59e0b' },
-        { title: 'Active Incidents', value: '3', icon: AlertTriangle, color: '#ef4444' },
     ];
 
     const recentVisitors = [
@@ -28,7 +27,7 @@ const DashboardView = () => {
 
     return (
         <div className="animate-fade-in" style={{ padding: '2rem' }}>
-            <div className="grid grid-cols-4 gap-4" style={{ marginBottom: '2rem' }}>
+            <div className="grid grid-cols-3 gap-4" style={{ marginBottom: '2rem' }}>
                 {stats.map((stat, idx) => (
                     <StatCard key={idx} {...stat} />
                 ))}

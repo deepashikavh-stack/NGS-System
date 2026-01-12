@@ -12,8 +12,8 @@ import {
     Tooltip as ChartTooltip,
     Legend as ChartLegend,
 } from 'chart.js';
-import { Bar as BarChartJS, Line as LineChartJS } from 'react-chartjs-2';
-import { Users, Car, AlertTriangle, Calendar, FileText } from 'lucide-react';
+import { Bar as BarChartJS } from 'react-chartjs-2';
+import { Users, Car, Calendar, FileText } from 'lucide-react';
 
 ChartJS.register(
     CategoryScale,
@@ -85,24 +85,17 @@ const ReportsView = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-4 gap-4" style={{ marginBottom: '2rem' }}>
+            <div className="grid grid-cols-3 gap-4" style={{ marginBottom: '2rem' }}>
                 <StatCard title="Total Visitors" value="1,284" icon={Users} trend="up" trendValue="+8%" color="#2563eb" />
                 <StatCard title="Staff Logs" value="4,520" icon={Users} trend="up" trendValue="+2%" color="#10b981" />
                 <StatCard title="Vehicle Entries" value="842" icon={Car} trend="down" trendValue="-3%" color="#f59e0b" />
-                <StatCard title="Incidents Logged" value="12" icon={AlertTriangle} trend="down" trendValue="-15%" color="#ef4444" />
             </div>
 
-            <div className="grid grid-cols-2 gap-4" style={{ marginBottom: '2rem' }}>
+            <div className="grid grid-cols-1 gap-4" style={{ marginBottom: '2rem' }}>
                 <div className="card">
                     <h3 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '1.5rem' }}>Traffic Overview ({range})</h3>
                     <div style={{ height: '300px' }}>
                         <BarChartJS data={barData} options={{ maintainAspectRatio: false }} />
-                    </div>
-                </div>
-                <div className="card">
-                    <h3 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '1.5rem' }}>Incident Trends</h3>
-                    <div style={{ height: '300px' }}>
-                        <LineChartJS data={lineData} options={{ maintainAspectRatio: false }} />
                     </div>
                 </div>
             </div>

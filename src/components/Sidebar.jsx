@@ -11,13 +11,12 @@ import {
     ShieldCheck
 } from 'lucide-react';
 
-const Sidebar = ({ activeTab, setActiveTab }) => {
+const Sidebar = ({ activeTab, setActiveTab, onLogout }) => {
     const menuItems = [
         { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
         { id: 'visitors', label: 'Visitors', icon: Users },
         { id: 'staff', label: 'Staff Entry', icon: UserPlus },
         { id: 'vehicles', label: 'Vehicles', icon: Car },
-        { id: 'incidents', label: 'Incidents', icon: AlertTriangle },
         { id: 'reports', label: 'Reports', icon: BarChart3 },
     ];
 
@@ -42,15 +41,8 @@ const Sidebar = ({ activeTab, setActiveTab }) => {
                 marginBottom: '2.5rem',
                 padding: '0.5rem'
             }}>
-                <div style={{
-                    backgroundColor: 'var(--primary)',
-                    padding: '0.5rem',
-                    borderRadius: '10px',
-                    color: 'white'
-                }}>
-                    <ShieldCheck size={24} />
-                </div>
-                <h1 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--primary)' }}>NGS Shield</h1>
+                <img src="/logo.png" alt="NGS Logo" style={{ width: '40px', height: 'auto' }} />
+                <h1 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#000' }}>Nextgen Shield</h1>
             </div>
 
             <nav style={{ flex: 1 }}>
@@ -96,6 +88,7 @@ const Sidebar = ({ activeTab, setActiveTab }) => {
                     <span>Settings</span>
                 </button>
                 <button
+                    onClick={onLogout}
                     style={{
                         width: '100%',
                         justifyContent: 'flex-start',
