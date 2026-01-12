@@ -4,6 +4,18 @@ import { UserPlus, Filter, Search, Download } from 'lucide-react';
 
 const VisitorsView = () => {
     const [showForm, setShowForm] = useState(false);
+    const [visitorType, setVisitorType] = useState('Parents');
+    const [identifier, setIdentifier] = useState('');
+
+    // Conditional identifier configuration based on visitor type
+    const getIdentifierConfig = () => {
+        if (visitorType === 'Lyceum') {
+            return { label: 'EMP Code', placeholder: 'Enter Employee Code (e.g., L-1234)' };
+        }
+        return { label: 'NIC / Passport', placeholder: 'ID Number' };
+    };
+
+    const identifierConfig = getIdentifierConfig();
 
     const columns = [
         { header: 'Visitor Name', key: 'name' },
@@ -88,23 +100,36 @@ const VisitorsView = () => {
                         <form style={{ display: 'grid', gap: '1.25rem' }}>
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
-                                    <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, marginBottom: '0.5rem' }}>Visitor Name</label>
-                                    <input type="text" placeholder="Full Name" style={{ width: '100%', padding: '0.625rem', borderRadius: '8px', border: '1px solid var(--border)' }} />
+                                    <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, marginBottom: '0.5rem' }}>Visitor Type</label>
+                                    <select
+                                        value={visitorType}
+                                        onChange={(e) => {
+                                            setVisitorType(e.target.value);
+                                            setIdentifier(''); // Clear identifier when type changes
+                                        }}
+                                        style={{ width: '100%', padding: '0.625rem', borderRadius: '8px', border: '1px solid var(--border)' }}
+                                    >
+                                        <option>Parents</option>
+                                        <option>Lyceum</option>
+                                        <option>Other</option>
+                                    </select>
                                 </div>
                                 <div>
-                                    <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, marginBottom: '0.5rem' }}>NIC / Passport</label>
-                                    <input type="text" placeholder="ID Number" style={{ width: '100%', padding: '0.625rem', borderRadius: '8px', border: '1px solid var(--border)' }} />
+                                    <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, marginBottom: '0.5rem' }}>{identifierConfig.label}</label>
+                                    <input
+                                        type="text"
+                                        value={identifier}
+                                        onChange={(e) => setIdentifier(e.target.value)}
+                                        placeholder={identifierConfig.placeholder}
+                                        style={{ width: '100%', padding: '0.625rem', borderRadius: '8px', border: '1px solid var(--border)' }}
+                                    />
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
-                                    <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, marginBottom: '0.5rem' }}>Visitor Type</label>
-                                    <select style={{ width: '100%', padding: '0.625rem', borderRadius: '8px', border: '1px solid var(--border)' }}>
-                                        <option>Lyceum</option>
-                                        <option>Parents</option>
-                                        <option>Other</option>
-                                    </select>
+                                    <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, marginBottom: '0.5rem' }}>Visitor Name</label>
+                                    <input type="text" placeholder="Full Name" style={{ width: '100%', padding: '0.625rem', borderRadius: '8px', border: '1px solid var(--border)' }} />
                                 </div>
                                 <div>
                                     <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, marginBottom: '0.5rem' }}>Purpose</label>

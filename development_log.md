@@ -39,3 +39,8 @@
 - Implemented Unified Access Log logic in DashboardView.jsx to merge and sort Visitor and Staff entry data.
 - Updated LogTable.jsx to support row-level highlighting for Staff (#f0f7ff) and Visitor (#f0fff4) entries.
 - Standardized data structure for unified logging (Type, Name, Detail, Status, Time).
+## [2026-01-12 13:30] Validation Method Tracking Enhancement
+- Added validation_method field to visitors and staff_entries tables in database schema.
+- Enhanced DashboardView.jsx with validation method tracking (Agent-Auto vs Manual).
+- Updated LogTable.jsx with color-coded verification badges (🤖 Agent-Auto in green, 👤 Manual in orange).
+- Reordered columns: Type | Name | Detail | Time | Verification | Status for better audit visibility.
