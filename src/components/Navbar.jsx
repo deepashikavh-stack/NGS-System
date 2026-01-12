@@ -5,6 +5,7 @@ const Navbar = ({ activeTab }) => {
     const getTitle = () => {
         switch (activeTab) {
             case 'dashboard': return 'Operational Dashboard';
+            case 'entry-management': return 'Entry Management';
             case 'visitors': return 'Visitor Management';
             case 'staff': return 'Staff & Employee Entry';
             case 'vehicles': return 'Vehicle Entry Logs';

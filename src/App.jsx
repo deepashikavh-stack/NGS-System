@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 import DashboardView from './views/DashboardView';
+import EntryManagementView from './views/EntryManagementView';
 import VisitorsView from './views/VisitorsView';
 import StaffView from './views/StaffView';
 import VehiclesView from './views/VehiclesView';
@@ -39,6 +40,8 @@ function App() {
     switch (activeTab) {
       case 'dashboard':
         return <DashboardView />;
+      case 'entry-management':
+        return <EntryManagementView />;
       case 'visitors':
         return <VisitorsView />;
       case 'staff':

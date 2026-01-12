@@ -44,3 +44,9 @@
 - Enhanced DashboardView.jsx with validation method tracking (Agent-Auto vs Manual).
 - Updated LogTable.jsx with color-coded verification badges (🤖 Agent-Auto in green, 👤 Manual in orange).
 - Reordered columns: Type | Name | Detail | Time | Verification | Status for better audit visibility.
+## [2026-01-12 13:36] Conditional Identifier Field Implementation
+- Added dynamic identifier field logic to VisitorsView.jsx.
+- When 'Lyceum' is selected: Shows 'EMP Code' field with placeholder 'Enter Employee Code (e.g., L-1234)'.
+- When 'Parents' or 'Other' is selected: Shows 'NIC / Passport' field with placeholder 'ID Number'.
+- Reordered form fields: Visitor Type → Identifier → Name → Purpose for better UX.
+- Identifier field clears automatically when visitor type changes to prevent data mismatch.
