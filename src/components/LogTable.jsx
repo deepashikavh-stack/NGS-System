@@ -56,20 +56,32 @@ const LogTable = ({ title, data, columns }) => {
                                 </td>
                             </tr>
                         ) : (
-                            data.map((row, rowIdx) => (
-                                <tr key={rowIdx} style={{ borderBottom: '1px solid var(--border)', transition: 'var(--transition)' }}>
-                                    {columns.map((col, colIdx) => (
-                                        <td key={colIdx} style={{ padding: '1rem 1.5rem', fontSize: '0.875rem' }}>
-                                            {col.key === 'status' ? getStatusBadge(row[col.key]) : row[col.key]}
+                            data.map((row, rowIdx) => {
+                                const isStaff = row.type === 'Staff';
+                                const isVisitor = row.type === 'Visitor';
+
+                                return (
+                                    <tr
+                                        key={rowIdx}
+                                        style={{
+                                            borderBottom: '1px solid var(--border)',
+                                            transition: 'var(--transition)',
+                                            backgroundColor: isStaff ? '#f0f7ff' : isVisitor ? '#f0fff4' : 'transparent'
+                                        }}
+                                    >
+                                        {columns.map((col, colIdx) => (
+                                            <td key={colIdx} style={{ padding: '1rem 1.5rem', fontSize: '0.875rem' }}>
+                                                {col.key === 'status' ? getStatusBadge(row[col.key]) : row[col.key]}
+                                            </td>
+                                        ))}
+                                        <td style={{ padding: '1rem 1.5rem', textAlign: 'right' }}>
+                                            <button style={{ backgroundColor: 'transparent', color: 'var(--text-muted)' }}>
+                                                <MoreVertical size={16} />
+                                            </button>
                                         </td>
-                                    ))}
-                                    <td style={{ padding: '1rem 1.5rem', textAlign: 'right' }}>
-                                        <button style={{ backgroundColor: 'transparent', color: 'var(--text-muted)' }}>
-                                            <MoreVertical size={16} />
-                                        </button>
-                                    </td>
-                                </tr>
-                            ))
+                                    </tr>
+                                );
+                            })
                         )}
                     </tbody>
                 </table>

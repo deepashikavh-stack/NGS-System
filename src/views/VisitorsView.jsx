@@ -15,8 +15,8 @@ const VisitorsView = () => {
     ];
 
     const mockVisitors = [
-        { name: 'John Doe', nic_passport: '881234567V', type: 'Walk-in', purpose: 'Parent Meeting', status: 'Approved', entry_time: '2026-01-12 09:15 AM' },
-        { name: 'Alice Smith', nic_passport: 'N12345678', type: 'Pre-registered', purpose: 'Vendor Delivery', status: 'Auto-confirmed', entry_time: '2026-01-12 10:30 AM' },
+        { name: 'John Doe', nic_passport: '881234567V', type: 'Parents', purpose: 'Parent Meeting', status: 'Approved', entry_time: '2026-01-12 09:15 AM' },
+        { name: 'Alice Smith', nic_passport: 'N12345678', type: 'Other', purpose: 'Vendor Delivery', status: 'Auto-confirmed', entry_time: '2026-01-12 10:30 AM' },
     ];
 
     return (
@@ -101,8 +101,9 @@ const VisitorsView = () => {
                                 <div>
                                     <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, marginBottom: '0.5rem' }}>Visitor Type</label>
                                     <select style={{ width: '100%', padding: '0.625rem', borderRadius: '8px', border: '1px solid var(--border)' }}>
-                                        <option>Walk-in</option>
-                                        <option>Pre-registered</option>
+                                        <option>Lyceum</option>
+                                        <option>Parents</option>
+                                        <option>Other</option>
                                     </select>
                                 </div>
                                 <div>

@@ -11,18 +11,31 @@ const DashboardView = () => {
     ];
 
     const recentVisitors = [
-        { name: 'John Doe', type: 'Walk-in', purpose: 'Parent Meeting', status: 'Approved', time: '09:15 AM' },
-        { name: 'Alice Smith', type: 'Pre-registered', purpose: 'Vendor Delivery', status: 'Auto-confirmed', time: '10:30 AM' },
-        { name: 'Bob Johnson', type: 'Walk-in', purpose: 'Service', status: 'Pending', time: '11:00 AM' },
-        { name: 'Charlie Brown', type: 'Pre-registered', purpose: 'Interview', status: 'Approved', time: '11:15 AM' },
+        { name: 'John Doe', type: 'Visitor', displayDetail: 'Parent Meeting', status: 'Approved', time: '2026-01-12T09:15:00' },
+        { name: 'Alice Smith', type: 'Visitor', displayDetail: 'Vendor Delivery', status: 'Auto-confirmed', time: '2026-01-12T10:30:00' },
+        { name: 'Bob Johnson', type: 'Visitor', displayDetail: 'Service', status: 'Pending', time: '2026-01-12T11:00:00' },
     ];
 
+    const recentStaff = [
+        { name: 'Dr. Sarah Wilson', type: 'Staff', displayDetail: 'EMP001', status: 'Confirmed', time: '2026-01-12T08:30:00' },
+        { name: 'Mr. James Miller', type: 'Staff', displayDetail: 'EMP042', status: 'Confirmed', time: '2026-01-12T08:45:00' },
+    ];
+
+    const unifiedData = [
+        ...recentVisitors,
+        ...recentStaff
+    ].sort((a, b) => new Date(b.time) - new Date(a.time))
+        .map(entry => ({
+            ...entry,
+            formattedTime: new Date(entry.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        }));
+
     const columns = [
-        { header: 'Visitor Name', key: 'name' },
         { header: 'Type', key: 'type' },
-        { header: 'Purpose', key: 'purpose' },
+        { header: 'Name', key: 'name' },
+        { header: 'Detail (Purpose/ID)', key: 'displayDetail' },
         { header: 'Status', key: 'status' },
-        { header: 'Entry Time', key: 'time' },
+        { header: 'Time', key: 'formattedTime' },
     ];
 
     return (
@@ -34,7 +47,7 @@ const DashboardView = () => {
             </div>
 
             <div className="grid grid-cols-1 gap-4">
-                <LogTable title="Live Visitor Log" data={recentVisitors} columns={columns} />
+                <LogTable title="Unified Access Log (Visitors & Staff)" data={unifiedData} columns={columns} />
             </div>
         </div>
     );

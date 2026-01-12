@@ -27,3 +27,15 @@
 - Created Public Landing Page based on mockup.
 - Implemented Role-based System Login.
 - Integrated NGS Logo across the application.
+## [2026-01-12 12:38] Visitor Types Update
+- Updated Visitor Type options to 'Lyceum', 'Parents', and 'Other' in VisitorsView.jsx.
+- Updated mock data to reflect new categories.
+- Updated database schema comment for the visitors table.
+## [2026-01-12 12:52] Unified Access Log Implementation
+- Implemented  logic in  to merge and sort Visitor and Staff entry data.
+- Updated  to support row-level highlighting for Staff (#f0f7ff) and Visitor (#f0fff4) entries.
+- Standardized data structure for unified logging (Type, Name, Detail, Status, Time).
+## [2026-01-12 12:52] Unified Access Log Implementation
+- Implemented Unified Access Log logic in DashboardView.jsx to merge and sort Visitor and Staff entry data.
+- Updated LogTable.jsx to support row-level highlighting for Staff (#f0f7ff) and Visitor (#f0fff4) entries.
+- Standardized data structure for unified logging (Type, Name, Detail, Status, Time).

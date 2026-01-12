@@ -8,7 +8,7 @@ CREATE TABLE visitors (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     name TEXT NOT NULL,
     nic_passport TEXT NOT NULL,
-    type TEXT NOT NULL, -- 'Pre-registered', 'Walk-in'
+    type TEXT NOT NULL, -- 'Lyceum', 'Parents', 'Other'
     purpose TEXT NOT NULL,
     entry_time TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     exit_time TIMESTAMP WITH TIME ZONE,
