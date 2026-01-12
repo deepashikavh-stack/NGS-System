@@ -50,3 +50,9 @@
 - When 'Parents' or 'Other' is selected: Shows 'NIC / Passport' field with placeholder 'ID Number'.
 - Reordered form fields: Visitor Type → Identifier → Name → Purpose for better UX.
 - Identifier field clears automatically when visitor type changes to prevent data mismatch.
+## [2026-01-12 14:42] Entry Management Module Implementation
+- Created unified Entry Management dashboard combining visitors and staff entries.
+- Implemented advanced filtering: Type (All/Visitor/Staff), Status (All/Confirmed/Pending), and Search.
+- Added color coding: Blue background for visitors, Green for staff, Orange for pending entries.
+- Implemented quick action buttons: Confirm (for pending), Check-out (for active), View (for details).
+- Integrated into sidebar navigation and app routing.

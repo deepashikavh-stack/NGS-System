@@ -16,7 +16,6 @@ const Sidebar = ({ activeTab, setActiveTab, onLogout }) => {
         { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
         { id: 'entry-management', label: 'Entry Management', icon: Users },
         { id: 'visitors', label: 'Visitors', icon: Users },
-        { id: 'staff', label: 'Staff Entry', icon: UserPlus },
         { id: 'vehicles', label: 'Vehicles', icon: Car },
         { id: 'reports', label: 'Reports', icon: BarChart3 },
     ];

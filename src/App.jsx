@@ -4,7 +4,6 @@ import Navbar from './components/Navbar';
 import DashboardView from './views/DashboardView';
 import EntryManagementView from './views/EntryManagementView';
 import VisitorsView from './views/VisitorsView';
-import StaffView from './views/StaffView';
 import VehiclesView from './views/VehiclesView';
 import ReportsView from './views/ReportsView';
 import LandingPage from './views/LandingPage';
@@ -44,8 +43,6 @@ function App() {
         return <EntryManagementView />;
       case 'visitors':
         return <VisitorsView />;
-      case 'staff':
-        return <StaffView />;
       case 'vehicles':
         return <VehiclesView />;
       case 'reports':
