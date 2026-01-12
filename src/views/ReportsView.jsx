@@ -47,18 +47,6 @@ const ReportsView = () => {
         ],
     };
 
-    const lineData = {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-        datasets: [
-            {
-                label: 'Incidents',
-                data: [12, 19, 3, 5, 2, 3],
-                borderColor: '#ef4444',
-                backgroundColor: 'rgba(239, 68, 68, 0.5)',
-                tension: 0.4,
-            },
-        ],
-    };
 
     return (
         <div className="animate-fade-in" style={{ padding: '2rem' }}>

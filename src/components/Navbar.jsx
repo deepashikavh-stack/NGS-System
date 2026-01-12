@@ -8,7 +8,6 @@ const Navbar = ({ activeTab }) => {
             case 'visitors': return 'Visitor Management';
             case 'staff': return 'Staff & Employee Entry';
             case 'vehicles': return 'Vehicle Entry Logs';
-            case 'incidents': return 'Incident Management';
             case 'reports': return 'Reports & Analytics';
             default: return 'NGS System';
         }

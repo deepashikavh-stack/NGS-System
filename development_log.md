@@ -22,3 +22,8 @@
 ## [2026-01-12 11:44] GitHub Integration
 - Connected local repository to https://github.com/deepashikavh-stack/NGS-System.git.
 - Performed initial commit and pushed to 'main' branch.
+## [2026-01-12 11:54] System Refinement
+- Removed Incident module from all views and sidebar.
+- Created Public Landing Page based on mockup.
+- Implemented Role-based System Login.
+- Integrated NGS Logo across the application.

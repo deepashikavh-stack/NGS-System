@@ -39,19 +39,6 @@ CREATE TABLE vehicle_entries (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- Incident Management
-CREATE TABLE incidents (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    date_time TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    category TEXT NOT NULL, -- 'Security', 'Safety', 'Asset Damage', etc.
-    severity TEXT NOT NULL, -- 'Low', 'Medium', 'High', 'Critical'
-    description TEXT NOT NULL,
-    status TEXT DEFAULT 'Open', -- 'Open', 'Under Review', 'Closed'
-    created_by UUID,
-    closed_at TIMESTAMP WITH TIME ZONE,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
-);
-
 -- Audit Logs
 CREATE TABLE audit_logs (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
