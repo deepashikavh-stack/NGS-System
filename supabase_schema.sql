@@ -13,6 +13,7 @@ CREATE TABLE visitors (
     entry_time TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     exit_time TIMESTAMP WITH TIME ZONE,
     status TEXT DEFAULT 'Pending', -- 'Pending', 'Approved', 'Rejected'
+    validation_method TEXT DEFAULT 'Manual', -- 'Manual', 'Agent-Auto'
     is_pre_registered BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
@@ -25,6 +26,7 @@ CREATE TABLE staff_entries (
     entry_time TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     exit_time TIMESTAMP WITH TIME ZONE,
     status TEXT DEFAULT 'Auto-confirmed',
+    validation_method TEXT DEFAULT 'Agent-Auto', -- 'Manual', 'Agent-Auto'
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 

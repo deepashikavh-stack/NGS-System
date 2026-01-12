@@ -11,14 +11,54 @@ const DashboardView = () => {
     ];
 
     const recentVisitors = [
-        { name: 'John Doe', type: 'Visitor', displayDetail: 'Parent Meeting', status: 'Approved', time: '2026-01-12T09:15:00' },
-        { name: 'Alice Smith', type: 'Visitor', displayDetail: 'Vendor Delivery', status: 'Auto-confirmed', time: '2026-01-12T10:30:00' },
-        { name: 'Bob Johnson', type: 'Visitor', displayDetail: 'Service', status: 'Pending', time: '2026-01-12T11:00:00' },
+        {
+            id: 'v1',
+            name: 'John Doe',
+            type: 'Visitor',
+            displayDetail: 'Parent Meeting',
+            status: 'Approved',
+            time: '2026-01-12T09:15:00',
+            method: 'Manual'
+        },
+        {
+            id: 'v2',
+            name: 'Alice Smith',
+            type: 'Visitor',
+            displayDetail: 'Vendor Delivery',
+            status: 'Auto-confirmed',
+            time: '2026-01-12T10:30:00',
+            method: 'Agent-Auto'
+        },
+        {
+            id: 'v3',
+            name: 'Bob Johnson',
+            type: 'Visitor',
+            displayDetail: 'Service',
+            status: 'Pending',
+            time: '2026-01-12T11:00:00',
+            method: 'Manual'
+        },
     ];
 
     const recentStaff = [
-        { name: 'Dr. Sarah Wilson', type: 'Staff', displayDetail: 'EMP001', status: 'Confirmed', time: '2026-01-12T08:30:00' },
-        { name: 'Mr. James Miller', type: 'Staff', displayDetail: 'EMP042', status: 'Confirmed', time: '2026-01-12T08:45:00' },
+        {
+            id: 's1',
+            name: 'Dr. Sarah Wilson',
+            type: 'Staff',
+            displayDetail: 'EMP001',
+            status: 'Confirmed',
+            time: '2026-01-12T08:30:00',
+            method: 'Agent-Auto'
+        },
+        {
+            id: 's2',
+            name: 'Mr. James Miller',
+            type: 'Staff',
+            displayDetail: 'EMP042',
+            status: 'Confirmed',
+            time: '2026-01-12T08:45:00',
+            method: 'Agent-Auto'
+        },
     ];
 
     const unifiedData = [
@@ -34,8 +74,9 @@ const DashboardView = () => {
         { header: 'Type', key: 'type' },
         { header: 'Name', key: 'name' },
         { header: 'Detail (Purpose/ID)', key: 'displayDetail' },
-        { header: 'Status', key: 'status' },
         { header: 'Time', key: 'formattedTime' },
+        { header: 'Verification', key: 'method' },
+        { header: 'Status', key: 'status' },
     ];
 
     return (
